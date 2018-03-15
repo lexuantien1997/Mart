@@ -5,7 +5,7 @@ import {
     StyleSheet,
     
 } from "react-native"
-
+// dd
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 export default class CartScreen extends Component {
