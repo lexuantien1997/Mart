@@ -5,13 +5,11 @@ import {
     TextInput,
     StyleSheet,
     Image,
-    Dimensions,
-    TouchableWithoutFeedback    
+    Dimensions       
 } from "react-native"
 
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import Hideo from "../../components/Hideo"
-import Makiko from "../../components/Makiko"
+
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 const { height, width } = Dimensions.get("window");
 
@@ -19,29 +17,51 @@ const { height, width } = Dimensions.get("window");
 export default class HomeScreen extends Component {
     render(){
         return(
-            <View style = {{ flex: 1}}>
-                <View style = {{ flex: 1}} >
-                    <Hideo
-                        placeHolder ={ "What're you looking for ?" }
-                        iconClass={FontAwesomeIcon}
-                        iconName={'envelope'}
-                        iconColor={'white'}
-                         // this is used as backgroundColor of icon container view.
-                        iconBackgroundColor={'#f2a59d'}
-                        inputStyle={{ color: '#464949' }}
-                    />
-                </View>
-                <View style = {{ flex: 1}}>
-                    <Makiko
-                        label={'Comment'}
-                        iconClass={FontAwesomeIcon}
-                        iconName={'comment'}
-                        iconColor={'white'}
-                        inputStyle={{ color: '#db786d' }}
-                    />
-                </View>
-            </View>               
+            <View>
+                <View style = { styles.searchBarContainer }>
+                    <View style = { styles.searchBar }>
+                        <EvilIcons 
+                            style = { styles.iconSearch } 
+                            name = "search" 
+                            size = { 22 } 
+                            color = "#DE8E91"
+                            />
+                        <TextInput style = { styles.searchInput } 
+                            placeholder = "What're you looking for today ?"
+                            underlineColorAndroid = "transparent"  
+                            placeholderTextColor = "#DE8E91"   
+                            selectionColor = "#DE8E91"                   
+                            />
+                    </View>
+                </View>                              
+            </View>           
         );
     }
 }
 
+const styles = StyleSheet.create({
+    searchBarContainer:{
+        justifyContent: "center",
+        alignItems: 'center',      
+        backgroundColor: "#E5101D",
+        height:45,
+
+    },
+    iconSearch:{
+        marginLeft: 5,
+    },
+    searchBar: {
+        justifyContent: "center",
+        alignItems: 'center',     
+        flexDirection: 'row', 
+        backgroundColor: "#C0020C",
+        height: 30,
+        borderRadius: 5,
+        marginHorizontal: 20,
+    },
+    searchInput: {
+        flex:1,
+        padding: 3,
+        color : "#DE8E91",  
+    }
+});

@@ -14,6 +14,7 @@ import CartScreen from "../pages/CartScreen"
 import NotifyScreen from "../pages/NotifyScreen"
 
 
+
 export const MainNavigator =  TabNavigator({
     Home: {
         screen: HomeScreen , // imported config
@@ -63,7 +64,8 @@ export const MainNavigator =  TabNavigator({
 },
 },
     {    
-        initialRouteName:"Cart", // We'll see this route name first             
+
+        initialRouteName:"Home", // We'll see this route name first  
         tabBarComponent: TabBarBottom, // using component "TabBarBottom"
         tabBarPosition: "bottom", // position of tab bar is bottom
         animationEnabled: true, // using animation
