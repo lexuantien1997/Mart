@@ -70,6 +70,3 @@ export const MainNavigator =  TabNavigator({
         swipeEnabled: true // use swipe animation 
     }
 );
-
-
-////////////////// Test last 
