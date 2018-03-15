@@ -26,7 +26,7 @@ export default class HomeScreen extends Component {
                         iconClass={FontAwesomeIcon}
                         iconName={'envelope'}
                         iconColor={'white'}
-                        // this is used as backgroundColor of icon container view.
+                         // this is used as backgroundColor of icon container view.
                         iconBackgroundColor={'#f2a59d'}
                         inputStyle={{ color: '#464949' }}
                     />
