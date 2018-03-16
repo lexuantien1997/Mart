@@ -68,7 +68,7 @@ export const MainNavigator =  TabNavigator({
         initialRouteName:"Home", // We'll see this route name first  
         tabBarComponent: TabBarBottom, // using component "TabBarBottom"
         tabBarPosition: "bottom", // position of tab bar is bottom
-        animationEnabled: true, // using animation
-        swipeEnabled: true // use swipe animation 
+        animationEnabled: false, // using animation
+        swipeEnabled: false // use swipe animation 
     }
 );
