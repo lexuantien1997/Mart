@@ -8,17 +8,15 @@ import Entypo from "react-native-vector-icons/Entypo";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 // import data 
-import HomeScreen from "../pages/HomeScreen"
-import UserScreen from "../pages/UserScreen"
-import CartScreen from "../pages/CartScreen"
-import NotifyScreen from "../pages/NotifyScreen"
-
+import HomeScreen from "../pages/home/HomeScreen"
+import UserScreen from "../pages/user/UserScreen"
+import CartScreen from "../pages/cart/CartScreen"
+import NotifyScreen from "../pages/notify/NotifyScreen"
 
 
 export const MainNavigator =  TabNavigator({
     Home: {
         screen: HomeScreen , // imported config
-
         // setting something for `tab navigation`
         navigationOptions : {
             title: "Home", // title inside the icon. Blank if not use

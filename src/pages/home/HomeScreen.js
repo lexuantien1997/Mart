@@ -6,9 +6,9 @@ import {
     Image    
 } from "react-native"
 
-import SearchBar from "../../components/form/SearchBar"
-import Category from "../../components/form/Category"
-import MenuOptions from "../../components/form/MenuOptions"
+import SearchBar from "./components/SearchBar"
+import Category from "./components/Category"
+import MenuOptions from "./components/MenuOptions"
 
 // search bar
 // category hot
@@ -21,7 +21,7 @@ export default class HomeScreen extends Component {
         return(
             <View style = {{ flex:1 }}>
                 <SearchBar />
-                <ScrollView> 
+                <ScrollView style = {{ backgroundColor : "#D4D3D0" }}> 
                     <View>
                         <Category /> 
                     </View>

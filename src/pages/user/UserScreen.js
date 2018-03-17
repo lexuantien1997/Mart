@@ -4,10 +4,8 @@ import {
     Text
 } from "react-native"
 
-class UserScreen extends Component {
-
-
-    
+ 
+export default class UserScreen extends Component {
     render(){
         return(
             <View>
@@ -16,5 +14,3 @@ class UserScreen extends Component {
         );
     }
 }
-
-export default UserScreen;
