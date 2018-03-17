@@ -16,41 +16,47 @@ export default class Category extends Component {
             return(
             <View style = { styles.container } >
                 <Swiper 
-                    style = {{ flex:1}}> 
-                    <View style = {{ flex:1}} >
-                        <Image
-                            style = {{ height: height*0.25, width: width}}
-                            resizeMode = "stretch"
-                            source= { require("../../../img/1.jpg") }
-                        />
-                    </View>    
+                    style = {{ flex:1}}>   
                     <View style = {{ flex:1}}>
                         <Image
                             style = {{ height: height*0.25, width: width}}
                             resizeMode = "stretch"
-                            source= { require("../../../img/2.jpg") }
+                            source= { require("../../../img/5.jpg") }
                         />
                     </View>                   
                     <View style = {{ flex:1}}>
                         <Image
                             style = {{ height: height*0.25, width: width}}
                             resizeMode = "stretch"
-                            source= { require("../../../img/1.jpg") }
+                            source= { require("../../../img/4.jpg") }
                         />
                     </View>    
                     <View style = {{ flex:1}}>
                         <Image
                             style = {{ height: height*0.25, width: width}}
                             resizeMode = "stretch"
-                            source= { require("../../../img/2.jpg") }
+                            source= { require("../../../img/3.jpg") }
                         />
                     </View>   
+                    <View style = {{ flex:1}}>
+                        <Image
+                            style = {{ height: height*0.25, width: width}}
+                            resizeMode = "stretch"
+                            source= { require("../../../img/2.jpg") }
+                        />
+                    </View>  
+                    <View style = {{ flex:1}}>
+                        <Image
+                            style = {{ height: height*0.25, width: width}}
+                            resizeMode = "stretch"
+                            source= { require("../../../img/1.jpg") }
+                        />
+                    </View>  
                 </Swiper>
             </View>
         );
     }
 }
-
 
  const styles = StyleSheet.create({
     container:{
