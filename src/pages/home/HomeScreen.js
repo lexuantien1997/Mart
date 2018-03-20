@@ -3,6 +3,7 @@ import {
     View,
     ScrollView,
     Text ,
+    ListView,
     Image    
 } from "react-native"
 
@@ -10,6 +11,7 @@ import SearchBar from "./components/SearchBar"
 import Category from "./components/Category"
 import MenuOptions from "./components/MenuOptions"
 import Recommend from "./components/Recommend"
+
 // search bar
 // category hot
 // horizontal menu option
@@ -27,10 +29,10 @@ export default class HomeScreen extends Component {
                     </View>
                     <View>                        
                         <MenuOptions />
-                        <Recommend />
-                        <Recommend /> 
-                        <Recommend /> 
-                        <Recommend /> 
+                        <Recommend name='Recommended'/>
+                        <Recommend name='Hot'/>
+                        <Recommend name='Trending'/>
+                        <Recommend name='Discover'/>
                     </View>                     
                 </ScrollView>               
             </View>           
