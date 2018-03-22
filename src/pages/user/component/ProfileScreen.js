@@ -54,42 +54,42 @@ export default class ProfileScreen extends Component {
             <View>
                 <CustomTextinput 
                     iconClass={Entypo}
-                    iconName={"evernote"}
+                    iconName={"blackboard"}
                     label={"Lê Xuân Tiến"}
                     hint="Name"
                     /> 
                 <CustomTextinput 
-                    iconClass={Entypo}
-                    iconName={"evernote"}
+                    iconClass={FontAwesome}
+                    iconName={"drupal"}
                     label={"shinigami"}
                     hint="Nickname"/> 
                 <CustomTextinput 
                     iconClass={Entypo}
-                    iconName={"evernote"}
+                    iconName={"facebook"}
                     label={"facebook.com/tienlx97"}
                     hint = "Website" />
                 <CustomTextinput 
                     iconClass={Entypo}
-                    iconName={"evernote"}
+                    iconName={"briefcase"}
                     label={"student"}
                     hint = "Job"
                     /> 
                 <Text style = {{ textDecorationLine: "underline", fontSize:16 , marginLeft: 10, marginTop: 10}}>PRIVATE INFORMATION</Text>
                 <CustomTextinput 
                     iconClass={Entypo}
-                    iconName={"evernote"}
+                    iconName={"mail"}
                     label={"tielx97@gmail.com"}
                     hint = "Email"
                     />
                 <CustomTextinput 
                     iconClass={Entypo}
-                    iconName={"evernote"}
+                    iconName={"old-phone"}
                     label={"0932311434"}
                     hint = "Phone"
                     />  
                 <CustomTextinput 
-                    iconClass={Entypo}
-                    iconName={"evernote"}
+                    iconClass={FontAwesome}
+                    iconName={"transgender-alt"}
                     label={"male"}
                     hint = "Gender"
                     />  
@@ -108,7 +108,8 @@ export default class ProfileScreen extends Component {
 
 const styles = StyleSheet.create({
     container:{
-        flex:1
+        flex:1,
+        backgroundColor:"#fff"
     },
     userView:{
         height: avatar_height,
