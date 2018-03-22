@@ -63,7 +63,7 @@ export const MainNavigator =  TabNavigator({
 },
     {    
 
-        initialRouteName:"Home", // We'll see this route name first  
+        initialRouteName:"User", // We'll see this route name first  
         tabBarComponent: TabBarBottom, // using component "TabBarBottom"
         tabBarPosition: "bottom", // position of tab bar is bottom
         animationEnabled: false, // using animation
