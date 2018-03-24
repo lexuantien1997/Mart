@@ -33,7 +33,7 @@ export default class CustomOption extends Component {
     static defaultProps = {
         height: 30,
         iconColor: "#989898",
-        iconSize: 35,        
+        iconSize: 30,        
         label: "edit text",
         labelSize:17,
         cHeight:53,      

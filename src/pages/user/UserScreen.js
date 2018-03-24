@@ -20,11 +20,24 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import CustomOption from "./component/CustomOption"
 import CustomDetail from "./component/CustomDetail"
 
+import AuthScreen from "./component/auth/AuthScreen"
+import Auth from "./component/auth/Auth"
+
 const { height, width } = Dimensions.get("window");
 const fcenter_height=height*0.22;
 
 export default class UserScreen extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            isLogin : false
+        }
+    }s
+
     render(){
+
+        if(this.state.isLogin){            
         return(
             <View style = { styles.container }>             
                 <View style = { styles.topstyle } >
@@ -46,11 +59,11 @@ export default class UserScreen extends Component {
                                     style = {{ borderWidth:1, borderColor:"#cbcbcb",paddingVertical:3, paddingHorizontal:30, borderRadius: 5}}
                                     onPress = { () => this.props.navigation.navigate("Profile")  }
                                     >
-                                   
+                                
                                     <Text style = {{ fontSize:15, color:"black" }}>Change my profile</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style = {{ borderWidth:1, borderColor:"#cbcbcb", paddingVertical:1, paddingHorizontal:10, borderRadius: 5}}>
-                                   <Ionicons name = "ios-settings-outline" size={25} color= "black"/>
+                                <Ionicons name = "ios-settings-outline" size={25} color= "black"/>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -60,7 +73,7 @@ export default class UserScreen extends Component {
                         <Text style= {{ marginLeft: 10}}>shinigami</Text>
                     </View>
                 </View>   
-
+    
                 <ScrollView style = { styles.center_2_style }>
                     <CustomOption 
                         iconClass={Entypo}
@@ -94,9 +107,17 @@ export default class UserScreen extends Component {
                         label={"Cài đặt"} /> 
                 </ScrollView>          
             </View>
-        );
+            );  
+        }
+        else {
+            return(
+                <Auth />          
+            );
+        }
+ 
     }
 }
+
 
 const styles = StyleSheet.create({
     container:{

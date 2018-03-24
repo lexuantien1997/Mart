@@ -86,6 +86,7 @@ export default class ProfileScreen extends Component {
                     iconName={"old-phone"}
                     label={"0932311434"}
                     hint = "Phone"
+                    
                     />  
                 <CustomTextinput 
                     iconClass={FontAwesome}

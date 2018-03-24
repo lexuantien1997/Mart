@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
     View,
     AppRegistry ,
-    StatusBar
+    StatusBar,
+    Platform
 } from 'react-native';
 
 
@@ -10,6 +11,18 @@ import {
 import { HomeStack } from "./src/route_config/RouteStackNavUser"
 
 export default class MyMart extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+        
+    componentDidMount() {
+        if (Platform.OS === 'android') {
+          StatusBar.setTranslucent(true);
+          StatusBar.setBackgroundColor('transparent');
+        }
+      }
+
     render(){    
         return(
             <View style = {{ flex:1 }}>              
@@ -19,5 +32,7 @@ export default class MyMart extends Component {
         );
     }
 }
+
+
 
 AppRegistry.registerComponent('MyApp', () => MyMart);
