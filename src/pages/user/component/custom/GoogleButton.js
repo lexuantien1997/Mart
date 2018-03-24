@@ -7,19 +7,20 @@ import {
     Dimensions,
     TouchableOpacity
 } from "react-native"
-import Entypo from 'react-native-vector-icons/Entypo';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const { height, width } = Dimensions.get('window')
 
-export default class LoginButton extends Component{
+export default class GoogleButton extends Component{
     render(){
         return(
             <View
                 animation="fadeInLeft" delay={1200} duration={700}  
-                style = { styles.loginStyle }           
+                style = { styles.loginStyle }                           
             >
-                <TouchableOpacity style = { styles.touchloginStyle } >
-                    <Text  style = {{ color:"#fff", fontSize:16, fontWeight:"bold" }}>Login</Text>
+                <TouchableOpacity style = { styles.touchloginStyle }>
+                    <FontAwesome name = "google" color = "#fff" size={23}/>
+                    <Text style = {{ color:"#fff", fontSize:16,fontWeight:"bold" }}>Google</Text>
                 </TouchableOpacity>                  
             </View>
         );
@@ -29,16 +30,16 @@ export default class LoginButton extends Component{
 const styles = StyleSheet.create({
     loginStyle:{
         alignItems:"center",
-        justifyContent:"center",    
+        justifyContent:"center",
     },
     touchloginStyle:{
         borderColor:"#fff",
         borderWidth:2,
         alignItems:"center",
-        justifyContent:"center",
-        width:(width*13)/20,
+        justifyContent:"space-around",
+        width:(width*35)/100,
         height: height / 14,
-        borderRadius:20,
-        marginTop:height/25
+        marginTop:height/27,
+        flexDirection:"row"
     }
 });

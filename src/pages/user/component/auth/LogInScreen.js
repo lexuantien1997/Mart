@@ -10,6 +10,9 @@ import {
 } from "react-native"
 
 import CustomTextinput from "../CustomTextinput"
+import LoginButton from "../custom/LoginButton"
+import FacebookButton from "../custom/FacebookButton"
+import GoogleButton from "../custom/GoogleButton"
 import Entypo from 'react-native-vector-icons/Entypo';
 
 const { height, width } = Dimensions.get('window')
@@ -22,12 +25,11 @@ export default class LogInScreen extends Component{
                 style = { styles.mainView }           
             >
                 <View>
-
                     <View style = {{ width: (width*8) / 10}}>
                         {/* Email */}
                         <CustomTextinput 
                             labelStyle = {{color: "#fff",fontSize:15}}
-                            marginTop= {25}
+                            marginTop= {15}
                             cHeight={47}
                             iconClass={Entypo}
                             iconName={"mail"}
@@ -39,7 +41,7 @@ export default class LogInScreen extends Component{
                         {/* Password */}
                         <CustomTextinput 
                             labelStyle = {{color: "#fff",fontSize:15}}                            
-                            marginTop= {25}
+                            marginTop= {15}
                             cHeight={47}
                             iconClass={Entypo}
                             iconName={"lock"}
@@ -49,9 +51,15 @@ export default class LogInScreen extends Component{
                             selectionColor = {"#fff"}                                               
                         />                          
                     </View>
-                    <TouchableOpacity style = {{ alignItems:"center", marginTop:height/25 }}>
-                        <Text>Forgot your password</Text>
-                    </TouchableOpacity>
+                     
+                </View>     
+                <TouchableOpacity style = {{ alignItems:"center", marginTop:height/25 }}>
+                    <Text  style = {{ color:"#fff", fontSize:16 }}>Forgot your password ?</Text>
+                </TouchableOpacity>
+                <LoginButton />       
+                <View style = {{ flexDirection:"row", justifyContent:"space-around" , alignItems:"center"}}>
+                    <FacebookButton />        
+                    <GoogleButton />                            
                 </View>
             </View>
         );
@@ -61,7 +69,6 @@ export default class LogInScreen extends Component{
 const styles = StyleSheet.create({
     mainView: {
         zIndex:1,
-        position:"absolute",
         flex:1,
         backgroundColor:"transparent"
     },
