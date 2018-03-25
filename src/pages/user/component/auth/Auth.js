@@ -17,13 +17,15 @@ const { height, width } = Dimensions.get('window')
 
 export default class Auth extends Component{
 
+    // function => change 2 screen
     switchScreens = index => () => {
         if(this.topTab.state.currentTabIndex !== index){
 
+            // change to login
             if(index===0){
                 
             } 
-            else {
+            else {  // change to register
 
             }
             this.topTab.state.tabStyles.reverse();
@@ -35,26 +37,13 @@ export default class Auth extends Component{
 
     render(){
         return(
-            <View 
-                style={{
-                    flex: 1, 
-                    backgroundColor:"#5CADEF"
-                }}
-              >
+            <View style={styles.container}>
                 <Banner />
                 <TopTab 
                     ref = {(ref) => { this.topTab = ref; }}
                     _switch={this.switchScreens}
                 />
-                <View
-                    style = {{
-                        backgroundColor:"#5CADEF",
-                        width,
-                        height:height-(height/4)+(height/19)-height/12,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                    }} >
-
+                <View style = {styles.mainView}>
                     <LogInScreen />
                 </View>
               </View>
@@ -63,3 +52,16 @@ export default class Auth extends Component{
 }
 
 
+
+const styles = StyleSheet.create({
+    container:{
+        flex: 1, 
+        backgroundColor:"#5CADEF"
+    },
+    mainView:{
+        backgroundColor:"#5CADEF",
+        flex:1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
+});

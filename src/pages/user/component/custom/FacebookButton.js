@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
         borderWidth:2,
         alignItems:"center",
         justifyContent:"space-around",
-        width:(width*35)/100,
+        width: width* 0.35,
         height: height / 14,
-        marginTop:height/27,
+        marginTop: height/27,
         flexDirection:"row"
     }
 });

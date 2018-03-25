@@ -12,6 +12,17 @@ import Entypo from 'react-native-vector-icons/Entypo';
 const { height, width } = Dimensions.get('window')
 
 export default class LoginButton extends Component{
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            isLogin:false,
+            canLogin: false
+        }
+    }
+
+
     render(){
         return(
             <View
@@ -36,7 +47,7 @@ const styles = StyleSheet.create({
         borderWidth:2,
         alignItems:"center",
         justifyContent:"center",
-        width:(width*13)/20,
+        width: width* 0.65,
         height: height / 14,
         borderRadius:20,
         marginTop:height/25

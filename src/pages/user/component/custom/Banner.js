@@ -1,29 +1,20 @@
 import React,{Component} from "react";
-import PropTypes from "prop-types"
 import {
     View,
-    Text,
     StyleSheet,
     Dimensions,
     Image,
-    TouchableOpacity,
     ImageBackground
 } from "react-native"
 import LinearGradient from "react-native-linear-gradient"
+
 const { height, width } = Dimensions.get('window')
 
+// get local image
 const ImageLogo = require("../../../../img/companylogo.png")
 const ImageBanner = require("../../../../img/companybanner.jpg")
 
 export default class Banner extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-           
-        }
-    }
-
     render(){
         return(
             <View animation="fadeInRight" delay={250} duration={700}>
@@ -50,13 +41,13 @@ export default class Banner extends Component {
 const styles = StyleSheet.create({
     background:{
         width,
-        height: height / 4 + height / 19,
+        height: height* 0.3,
         alignItems: 'center',
         justifyContent: 'center',
     },
     icon:{
         position:"absolute",
-        width:(width*52)/100,
+        width:width*0.52,
         tintColor:"#fff"
     }
 });
