@@ -7,17 +7,12 @@ import {
     TouchableOpacity
 } from "react-native"
 
-import CustomTextinput from "../CustomTextinput"
 import LoginButton from "../custom/LoginButton"
 import FacebookButton from "../custom/FacebookButton"
 import GoogleButton from "../custom/GoogleButton"
 
-import Email from "../custom/Email"
-import Password from "../custom/Password"
-
-// color
-import Entypo from  "react-native-vector-icons/Entypo"
-
+import Email from "../custom/login/Email"
+import Password from "../custom/login/Password"
 
 const { height, width } = Dimensions.get('window')
 
@@ -25,19 +20,29 @@ const mainColor = "#fff"
 
 export default class LogInScreen extends Component{
 
-    constructor(props,context){
-        super(props,context);
+    constructor(){
+        super();
         this.state = {
             inputs: []
-        };
+        }
     }
 
-    // change the focus when finish write 
-    changeInputFocus = index => {
-        if (index === 0){
-            this.state.inputs[index+1].state.inputRef._root.focus();
+    changeInputFocus = index =>() => {
+        if (index === 0) {
+            this.state.inputs[index+1].state.inputRef.focus(); // focus another
         }
     };
+
+    updateCanLoginState = () => {
+        let canLogin = true;
+        this.state.inputs.forEach((child) => {
+            if (child.state.isCorrect !=== 1){ // mean false
+                canLogin = false;
+            }
+        });
+
+        this
+    }
 
     render(){
         return(
@@ -45,25 +50,28 @@ export default class LogInScreen extends Component{
                 animation="fadeInLeft" delay={1200} duration={700}  
                 style = { styles.container }           
             >
+
                 <View style = {{ width: width*0.8 }}>
-                    <Email
-                        changeFocus = {this.changeInputFocus(0).bind(this)} 
-                        ref = { (ref) => { this.state.inputs[0] = ref; } } 
-                        />
-                    <Password 
-                        ref = { (ref) => { this.state.inputs[1] = ref; } }
-                        changeFocus = {this.changeInputFocus(1).bind(this)}/>
+                        <Email 
+                            changeFocus = {this.changeInputFocus(0)}
+                            update = {this.up}
+                            ref = { (ref)=> { this.state.inputs[0] = ref; } }/>
+                        <Password 
+                            changeFocus = {this.changeInputFocus(1)}
+                            ref = { (ref)=> { this.state.inputs[1] = ref; } }/>
                 </View>   
                 <TouchableOpacity style = {styles.forgotPassStyle}>
                     <Text  
                         style = {{ color:mainColor, fontSize:16 }}
                         >Forgot your password ?</Text>
                 </TouchableOpacity>
-                <LoginButton />       
+                <LoginButton 
+                    ref = { (ref) => { this.loginButton = ref ; } }/>       
                 <View style = {styles.otherLoginStyle}>
                     <FacebookButton />        
                     <GoogleButton />                            
                 </View>
+            
             </View>
         );
     }

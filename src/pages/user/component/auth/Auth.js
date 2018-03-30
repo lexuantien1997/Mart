@@ -37,7 +37,7 @@ export default class Auth extends Component{
 
     render(){
         return(
-            <View style={styles.container}>
+            <View style={styles.container}>       
                 <Banner />
                 <TopTab 
                     ref = {(ref) => { this.topTab = ref; }}
