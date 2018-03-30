@@ -36,13 +36,24 @@ export default class LogInScreen extends Component{
     updateCanLoginState = () => {
         let canLogin = true;
         this.state.inputs.forEach((child) => {
-            if (child.state.isCorrect !=== 1){ // mean false
+            if (child.state.isCorrect !== 1){ // mean false
                 canLogin = false;
             }
         });
 
-        this
-    }
+        this.loginButton.updateCanLogin(
+            canLogin,
+            this.state.inputs[0].state.value,
+            this.state.inputs[1].state.value
+        );
+    };
+
+
+    clearAllInputs = () => {
+        this.state.inputs.forEach((child) => {
+            child.clearInput();
+        });
+    };
 
     render(){
         return(
@@ -54,10 +65,11 @@ export default class LogInScreen extends Component{
                 <View style = {{ width: width*0.8 }}>
                         <Email 
                             changeFocus = {this.changeInputFocus(0)}
-                            update = {this.up}
+                            update = {this.updateCanLoginState}
                             ref = { (ref)=> { this.state.inputs[0] = ref; } }/>
                         <Password 
                             changeFocus = {this.changeInputFocus(1)}
+                            update = {this.updateCanLoginState}
                             ref = { (ref)=> { this.state.inputs[1] = ref; } }/>
                 </View>   
                 <TouchableOpacity style = {styles.forgotPassStyle}>
@@ -66,7 +78,9 @@ export default class LogInScreen extends Component{
                         >Forgot your password ?</Text>
                 </TouchableOpacity>
                 <LoginButton 
-                    ref = { (ref) => { this.loginButton = ref ; } }/>       
+                    ref = { (ref) => { this.loginButton = ref ; } }
+                    clear ={ this.clearAllInputs }
+                    />       
                 <View style = {styles.otherLoginStyle}>
                     <FacebookButton />        
                     <GoogleButton />                            

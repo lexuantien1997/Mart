@@ -36,7 +36,17 @@ export default class Password extends Component{
     }
 
 
-    updateText() = (value) => {
+    clearInput = () => {
+        this.state.inputRef.setNativeProps({
+            text:""
+        });
+        this.setState({
+            isCorrect:0,
+            value: ""
+        })
+    }
+
+    updateText = (value) => {
         this.state.value = value;
     }
 

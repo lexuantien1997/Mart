@@ -23,13 +23,36 @@ export default class LoginButton extends Component{
     }
 
 
+    updateCanLogin(can) {
+        this.setState ({ 
+            canLogin: can
+         });
+    };
+
+    loginUser = () => {
+        if (!this.state.isLogin) {
+            if (!this.state.canLogin) { // missing some field
+                alert("missing some field");
+            } else {             
+                //
+                this.props.clear();
+                this.setState ({
+                    isLogin:false,
+                    canLogin: false
+                })
+            }
+        }
+    }
+
     render(){
         return(
             <View
                 animation="fadeInLeft" delay={1200} duration={700}  
                 style = { styles.loginStyle }           
             >
-                <TouchableOpacity style = { styles.touchloginStyle } >
+                <TouchableOpacity 
+                    style = { styles.touchloginStyle } 
+                    onPress = { this.loginUser }>
                     <Text  style = {{ color:"#fff", fontSize:16, fontWeight:"bold" }}>Login</Text>
                 </TouchableOpacity>                  
             </View>
@@ -53,3 +76,7 @@ const styles = StyleSheet.create({
         marginTop:height/25
     }
 });
+
+LoginButton.propTypes = {
+    clear: PropTypes.func.isRequired
+}

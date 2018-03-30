@@ -8,6 +8,7 @@ import {
     TouchableOpacity
 } from "react-native"
 
+
 import TopTab from "../custom/TopTab"
 import Banner from "../custom/Banner"
 
@@ -45,8 +46,8 @@ export default class Auth extends Component{
                 />
                 <View style = {styles.mainView}>
                     <LogInScreen />
-                </View>
-              </View>
+                </View>                      
+            </View>
         );
     }
 }

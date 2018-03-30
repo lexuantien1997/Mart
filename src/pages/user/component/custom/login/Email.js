@@ -3,7 +3,8 @@ import {
     View,
     StyleSheet,
     Dimensions,
-    TextInput
+    TextInput,
+    
 } from "react-native"
 import PropTypes from "prop-types"
 import Entypo from  "react-native-vector-icons/Entypo"
@@ -34,8 +35,17 @@ export default class Email extends Component{
 
     }
 
+    clearInput = () => {
+        this.state.inputRef.setNativeProps({
+            text:""
+        });
+        this.setState({
+            isCorrect:0,
+            value: ""
+        })
+    }
 
-    updateText() = (value) => {
+    updateText = (value) => {
         this.state.value = value;
     }
 
@@ -44,6 +54,7 @@ export default class Email extends Component{
       
             <View style = {styles.container} >
                 <Entypo style = {styles.iconStyle} name = "mail" color = {mainColor} size={30}/>
+                
                 <TextInput                     
                     style = {styles.inputStyle}
                     ref = { (ref)=> { this.state.inputRef = ref; } }

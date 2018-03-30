@@ -3,13 +3,14 @@ import {
     View,
     AppRegistry ,
     StatusBar,
-    Platform
+    Platform,
+    Dimensions
 } from 'react-native';
-
 
 // import { MainNavigator } from "./src/route_config/RouteTabNavHome";
 import { HomeStack } from "./src/route_config/RouteStackNavUser"
 
+const { height, width } = Dimensions.get('window')
 export default class MyMart extends Component {
 
     constructor(props) {
@@ -26,7 +27,7 @@ export default class MyMart extends Component {
     render(){    
         return(
             <View style = {{ flex:1 }}>              
-                 <HomeStack />          
+                <HomeStack />                      
             </View>
        
         );
