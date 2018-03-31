@@ -46,8 +46,7 @@ export default class LoginButton extends Component{
 
     render(){
         return(
-            <View
-                animation="fadeInLeft" delay={1200} duration={700}  
+            <View                
                 style = { styles.loginStyle }           
             >
                 <TouchableOpacity 

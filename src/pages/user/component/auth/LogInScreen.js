@@ -23,22 +23,10 @@ export default class LogInScreen extends Component{
     constructor(){
         super();
         this.state = {
-            inputs: [],
-            zIndex: 0
+            inputs: []
         }
     }
 
-    changezIndex () {
-        if  (this.state.zIndex === 0) {
-            this.setState ({
-                zIndex: 100
-            });
-        } else {
-            this.setState ({
-                zIndex: 0
-            });
-        }
-    }
 
     changeInputFocus = index =>() => {
         if (index === 0) {
@@ -71,7 +59,7 @@ export default class LogInScreen extends Component{
     render(){
         return(
             <View              
-                style = { [{  zIndex:this.state.zIndex }, styles.container ] }
+                style = {  styles.container  }
                 ref = { (ref) => { this.animationView = ref; } }           
             >
 

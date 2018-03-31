@@ -25,10 +25,6 @@ export default class Auth extends Component{
        };
    }
 
-    changezIndex = () => {
-        this.logInScreen.changezIndex();
-    }
-
     // function => change 2 screen
     switchScreens = index => () => {
         if(this.topTab.state.currentTabIndex !== index){
@@ -64,15 +60,8 @@ export default class Auth extends Component{
                     _switch={this.switchScreens}
                 />
                <View style = {styles.mainView}>
-                    { mainJSX }
-                    
-                    {/* <LogInScreen 
-                        ref  = { (ref) => { this.logInScreen = ref; } }
-                    /> 
-                    
-                    <RegisterScreen 
-                        ref  = { (ref) => { this.registerScreen = ref; } }
-                    /> */}
+                    {/* Show login or register */}
+                    { mainJSX }   
                 </View>                      
             </View>
         );
