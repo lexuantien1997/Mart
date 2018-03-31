@@ -6,7 +6,7 @@ import {
     Dimensions,
     TouchableOpacity
 } from "react-native"
-
+import PropTypes from "prop-types"
 import LoginButton from "../custom/LoginButton"
 import FacebookButton from "../custom/FacebookButton"
 import GoogleButton from "../custom/GoogleButton"
@@ -23,7 +23,20 @@ export default class LogInScreen extends Component{
     constructor(){
         super();
         this.state = {
-            inputs: []
+            inputs: [],
+            zIndex: 0
+        }
+    }
+
+    changezIndex () {
+        if  (this.state.zIndex === 0) {
+            this.setState ({
+                zIndex: 100
+            });
+        } else {
+            this.setState ({
+                zIndex: 0
+            });
         }
     }
 
@@ -57,9 +70,9 @@ export default class LogInScreen extends Component{
 
     render(){
         return(
-            <View
-                animation="fadeInLeft" delay={1200} duration={700}  
-                style = { styles.container }           
+            <View              
+                style = { [{  zIndex:this.state.zIndex }, styles.container ] }
+                ref = { (ref) => { this.animationView = ref; } }           
             >
 
                 <View style = {{ width: width*0.8 }}>
@@ -92,8 +105,7 @@ export default class LogInScreen extends Component{
 }
 
 const styles = StyleSheet.create({
-    container: {
-        zIndex:1,
+    container: {    
         flex:1,
         backgroundColor:"transparent"
     },
