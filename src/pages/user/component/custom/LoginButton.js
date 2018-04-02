@@ -32,7 +32,8 @@ export default class LoginButton extends Component{
     loginUser = () => {
         if (!this.state.isLogin) {
             if (!this.state.canLogin) { // missing some field
-                alert("missing some field");
+                alert ("height: "+ height + "width: "+width);
+               // alert("missing some field");
             } else {             
                 //
                 this.props.clear();
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
         width: width* 0.65,
         height: height / 14,
         borderRadius:20,
-        marginTop:height/25
+        marginTop: height/35
     }
 });
 

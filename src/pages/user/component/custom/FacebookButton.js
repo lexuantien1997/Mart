@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         justifyContent:"space-around",
         width: width* 0.35,
         height: height / 14,
-        marginTop: height/27,
+        marginTop: height/35,
         flexDirection:"row"
     }
 });

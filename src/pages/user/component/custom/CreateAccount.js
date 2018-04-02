@@ -20,7 +20,6 @@ export default class CreateAccount extends Component{
     }
 
 
-   
     render(){
         return(
             <View               
@@ -46,9 +45,9 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         width: width* 0.65,
-        height: height / 14,
+        height: height / 18,
         borderRadius:20,
-        marginTop:10
+        marginTop:7
     }
 });
 

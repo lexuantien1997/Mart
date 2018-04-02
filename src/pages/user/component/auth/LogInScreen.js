@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     },
     forgotPassStyle:{
         alignItems:"center", 
-        marginTop:height/27
+        marginTop:height/35
     },
     otherLoginStyle:{
         flexDirection:"row",
