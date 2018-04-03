@@ -34,8 +34,7 @@ export default class LoginButton extends Component{
             if (!this.state.canLogin) { // missing some field
                 alert ("height: "+ height + "width: "+width);
                // alert("missing some field");
-            } else {             
-                //
+            } else {                             
                 this.props.clear();
                 this.setState ({
                     isLogin:false,

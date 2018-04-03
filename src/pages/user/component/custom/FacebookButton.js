@@ -12,6 +12,12 @@ import Entypo from 'react-native-vector-icons/Entypo';
 const { height, width } = Dimensions.get('window')
 
 export default class FacebookButton extends Component{
+
+
+    faceBookLogin() {
+
+    };
+
     render(){
         return(
             <View
@@ -22,6 +28,9 @@ export default class FacebookButton extends Component{
                     <Entypo name = "facebook" color = "#fff" size={23}/>
                     <Text style = {{ color:"#fff", fontSize:16, fontWeight:"bold" }}>Facebook</Text>
                 </TouchableOpacity>                  
+
+               
+
             </View>
         );
     }
