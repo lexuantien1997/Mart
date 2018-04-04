@@ -1,5 +1,5 @@
 import { firebaseApp , fProvider, auth} from "../FirebaseConfig"
-
+import { GoogleSignin } from "react-native-google-signin";
 const FBSDK = require("react-native-fbsdk");
 const {
     AccessToken,
@@ -83,6 +83,29 @@ export default class AuthenConf {
                 });
         } catch (error) { alert (error.toString()); }   
     }
+
+    ///
+    /// sign in with google
+    ///
+    static onLoginGoogle() {
+         GoogleSignin.signIn()
+            .then ((data) => {
+                const credential = gProvider.credential(data.idToken,data.accessToken);
+                // Login with fire base
+                return auth.signInWithCredential(credential);
+            })
+            .then ((user) =>{
+                // get profile
+                alert(user);
+            })
+            .catch((error)=>{
+                alert(error.toString());
+            })
+       
+    }
+
+    static configGoogle () {
  
+    }
 }
  

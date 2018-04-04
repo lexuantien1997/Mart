@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "692081130534",
+    "firebase_url": "https://mart-s-authen-managenment.firebaseio.com",
+    "project_id": "mart-s-authen-managenment",
+    "storage_bucket": "mart-s-authen-managenment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692081130534:android:1d998300551a0981",
+        "android_client_info": {
+          "package_name": "com.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692081130534-on3lhtbuvi0ss0t7gk6u3imama4rm66q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myapp",
+            "certificate_hash": "ea5c2edb0dc2a934ab246b2eb1b7d3d13187c84a"
+          }
+        },
+        {
+          "client_id": "692081130534-646mtb521vgnej50js8jg3o8hi39lf68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5psuo0-ZGF5lMVlaHb74O6Pp_IafGjf4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692081130534-646mtb521vgnej50js8jg3o8hi39lf68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
